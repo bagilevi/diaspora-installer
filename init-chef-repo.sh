@@ -15,8 +15,8 @@ curl -O -L https://github.com/downloads/bagilevi/mysql-cookbook/mysql.tgz
 curl -O http://s3.amazonaws.com/opscode-community/cookbook_versions/tarballs/765/original/openssl.tgz
 curl -O http://s3.amazonaws.com/opscode-community/cookbook_versions/tarballs/387/original/redis.tgz
 curl -O http://s3.amazonaws.com/opscode-community/cookbook_versions/tarballs/523/original/runit.tgz
-#curl -O https://github.com/downloads/bagilevi/diaspora-cookbook/diaspora.tgz
-cp ../../../diaspora.tgz .
+
+git clone https://github.com/bagilevi/diaspora-cookbook.git ../../cookbooks/diaspora
 
 cd ../../cookbooks
 
