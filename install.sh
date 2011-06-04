@@ -40,6 +40,7 @@ echo "{
       \"database\": \"${SITE_NAME}_production\",
       \"password\": \"$MYSQL_DIASPORA_PASSWORD\"
     },
+    \"repository\": \"git://github.com/diaspora/diaspora.git\",
     \"rails_secret_token\": \"$RAILS_SECRET_TOKEN\"
   },
   \"run_list\": [ \"recipe[diaspora]\" ]

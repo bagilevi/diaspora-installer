@@ -28,10 +28,6 @@ Get the installer, if you haven't yet, and cd to the directory:
     git clone https://github.com/bagilevi/diaspora-installer.git
     cd diaspora-installer
 
-**SSL**: Optionally, get an SSL certificate for your domain and place the `example.com.crt`
-and `example.com.key` files in the `diaspora-installer/upload` directory (create it if it doesn't exist)
-If these files are not present, SSL will not be enabled. You can enable it later.
-
 Run:
 
     ./install.sh
@@ -40,6 +36,8 @@ and enter the details:
 
 **Server hostname**: the hostname or IP address you can access the server, don't
 include any "http" or "/".
+
+**Login user**: username to use for SSH-ing into the server (E.g. `root`)
 
 **Pod name**: what do you want to call your pod? E.g.: *London Diaspora*, *My-Seed*.
 
@@ -53,13 +51,38 @@ If you're lucky you'll have a diaspora pod in about 20 minutes.
 
 ## Updating
 
-    ./run-chef-solo.sh USERNAME SERVER
+To update to the latest DIASPORA* version, run:
 
-This will package/upload all the cookbooks, upload `node.json`, upload
-certificate files and enable SSL if the files are present (see above), and update
-DIASPORA* to the latest version.
+    ./run-chef-solo.sh LOGIN_USER SERVER_HOST_NAME
 
-## Todo
+## SSL
+
+To enable SSL (Secure HTTP):
+
+1. get an SSL certificate
+2. place the `example.com.crt` and `example.com.key` files in the `diaspora-installer/upload` directory (create it if it doesn't exist)
+3. edit `upload/node.json` and change `enable_ssl` to "true"
+4. `./run-chef-solo.sh LOGIN_USER SERVER_HOST_NAME`
+
+## Customizing Diaspora
+
+To customize something in the code, fork the
+[main repository](https://github.com/diaspora/diaspora/), and change
+`repository` in `upload/node.json` to your own repository URL.
+
+Refer to the [DIASPORA* Wiki](https://github.com/diaspora/diaspora/wiki)
+for details.
+
+## Bugs
+
+To report bugs, please use the
+[issue tracker](https://github.com/bagilevi/diaspora-installer/issues).
+
+If you know the problem is in the cookbook, then use the
+[diaspora-cookbook issue
+tracker](https://github.com/bagilevi/diaspora-cookbook/issues).
+
+## To do
 
 * security
 * data backup
