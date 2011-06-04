@@ -10,7 +10,6 @@ echo "Uploading cookbooks..."
 scp cookbooks.tar.gz $USER@$SERVER:cookbooks.tar.gz
 
 echo "Uploading configuration..."
-scp solo.rb $USER@$SERVER:solo.rb
 scp node.json $USER@$SERVER:node.json
 
 if [ "$(find . -name *.crt -depth 1 | wc -l)" -gt 0 ]; then

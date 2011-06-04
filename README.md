@@ -1,6 +1,6 @@
 # Diaspora Installer
 
-**Alpha software** expect trouble
+**Alpha software!** Expect trouble.
 
 This installation script will set up a Diaspora pod on a clean server. You have to
 enter some basic information then the script will do the rest automatically.
@@ -23,11 +23,20 @@ for root.
 Get a domain name or subdomain for your pod or temporarily put it in your /etc/hosts
 (or similar) file.
 
-Optionally, get an SSL certificate for your domain and place the `example.com.crt`
-and `example.com.key` files in the diaspora-setup directory. If these files are not
-present, SSL will not be enabled. You can enable it later.
+Get the installer, if you haven't yet, and cd to the directory:
 
-Run `install.sh` and enter the details.
+    git clone https://github.com/bagilevi/diaspora-installer.git
+    cd diaspora-installer
+
+**SSL**: Optionally, get an SSL certificate for your domain and place the `example.com.crt`
+and `example.com.key` files in the `diaspora-installer/upload` directory (create it if it doesn't exist)
+If these files are not present, SSL will not be enabled. You can enable it later.
+
+Run:
+
+    ./install.sh
+
+and enter the details:
 
 **Server hostname**: the hostname or IP address you can access the server, don't
 include any "http" or "/".
@@ -44,7 +53,7 @@ If you're lucky you'll have a diaspora pod in about 20 minutes.
 
 ## Updating
 
-`./run-chef-solo.sh`
+    ./run-chef-solo.sh USERNAME SERVER
 
 This will package/upload all the cookbooks, upload `node.json`, upload
 certificate files and enable SSL if the files are present (see above), and update

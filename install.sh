@@ -47,8 +47,8 @@ echo "{
 " > upload/node.json
 
 ssh $USER@$SERVER 'echo "
-file_cache_path "/var/chef-solo"
-cookbook_path "/var/chef-solo/cookbooks"
+file_cache_path \"/var/chef-solo\"
+cookbook_path \"/var/chef-solo/cookbooks\"
 " > ~/solo.rb'
 
 ./init-chef-repo.sh

@@ -17,6 +17,7 @@ curl -O http://s3.amazonaws.com/opscode-community/cookbook_versions/tarballs/387
 curl -O http://s3.amazonaws.com/opscode-community/cookbook_versions/tarballs/523/original/runit.tgz
 
 git clone https://github.com/bagilevi/diaspora-cookbook.git ../../cookbooks/diaspora
+rm -Rf ../../cookbooks/diaspora/.git
 
 cd ../../cookbooks
 
