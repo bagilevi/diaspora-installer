@@ -44,12 +44,12 @@ echo "{
       \"password\": \"$MYSQL_DIASPORA_PASSWORD\"
     },
     \"repository\": \"git://github.com/diaspora/diaspora.git\",
-    \"revision\": \"master\"
+    \"revision\": \"master\",
     \"rails_secret_token\": \"$RAILS_SECRET_TOKEN\",
     \"oauth_keys\": {
       \"facebook\": {
         \"app_id\": \"\",
-        \"app_secret\": \"\",
+        \"app_secret\": \"\"
       },
       \"twitter\": {
         \"consumer_key\": \"\",
@@ -59,7 +59,7 @@ echo "{
         \"consumer_key\": \"\",
         \"consumer_secret\": \"\"
       }
-    }
+    },
     \"rails_secret_token\": \"$RAILS_SECRET_TOKEN\"
   },
   \"run_list\": [ \"recipe[diaspora]\" ]
