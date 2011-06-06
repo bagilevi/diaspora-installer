@@ -34,13 +34,32 @@ echo "{
     \"pod_name\": \"$POD_NAME\",
     \"domain\": \"$POD_DOMAIN\",
     \"site_name\": \"$SITE_NAME\",
+    \"path\": \"/var/www/$POD_DOMAIN\",
     \"platform\": \"production\",
     \"enable_ssl\": $ENABLE_SSL,
+    \"registrations_closed\": false,
+    \"invites_off\": false,
     \"database\": {
       \"database\": \"${SITE_NAME}_production\",
       \"password\": \"$MYSQL_DIASPORA_PASSWORD\"
     },
-    \"rails_secret_token\": \"$RAILS_SECRET_TOKEN\"
+    \"repository\": \"git://github.com/diaspora/diaspora.git\",
+    \"revision\": \"master\"
+    \"rails_secret_token\": \"$RAILS_SECRET_TOKEN\",
+    \"oauth_keys\": {
+      \"facebook\": {
+        \"app_id\": \"\",
+        \"app_secret\": \"\",
+      },
+      \"twitter\": {
+        \"consumer_key\": \"\",
+        \"consumer_secret\": \"\"
+      },
+      \"tumblr\": {
+        \"consumer_key\": \"\",
+        \"consumer_secret\": \"\"
+      }
+    }
   },
   \"run_list\": [ \"recipe[diaspora]\" ]
 }
