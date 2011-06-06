@@ -60,14 +60,15 @@ echo "{
         \"consumer_secret\": \"\"
       }
     }
+    \"rails_secret_token\": \"$RAILS_SECRET_TOKEN\"
   },
   \"run_list\": [ \"recipe[diaspora]\" ]
 }
 " > upload/node.json
 
 ssh $USER@$SERVER 'echo "
-file_cache_path "/var/chef-solo"
-cookbook_path "/var/chef-solo/cookbooks"
+file_cache_path \"/var/chef-solo\"
+cookbook_path \"/var/chef-solo/cookbooks\"
 " > ~/solo.rb'
 
 ./init-chef-repo.sh
